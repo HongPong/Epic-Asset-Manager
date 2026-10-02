@@ -1,0 +1,21 @@
+[package]
+name = "fabdl"
+version = "0.1.0"
+edition = "2021"
+description = "Minimal downloader for your own purchased Fab assets (any engine version)"
+license = "GPL-3.0-or-later"
+
+[workspace]
+
+[dependencies]
+egs-api = "=0.14.0"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+reqwest = "0.13"
+futures-util = "0.3"
+sha1 = "0.10"
+serde_json = "1"
+
+[profile.release]
+opt-level = "s"
+lto = true
+strip = true
